@@ -105,7 +105,7 @@ public class Key {
 			System.out.println("Char ascii: "+temp+"\n");
 			String result;
 			String chString = Integer.toString(temp);
-			if(temp<=122 && temp>=97) {
+			if((temp<=122 && temp>=65)) { // prev. just lowercase -- above or = to 97
 				// convert to base 4 (ignore earlier overthinking, this DOES work)
 				result = Integer.toString(Integer.parseInt(chString, 10), 4);
 				System.out.println(result);
@@ -128,7 +128,7 @@ public class Key {
 							System.out.println("why are you not entering the cases");
 					}
 				}
-			}else if(temp<=90 && temp>=65) {
+			}else if((temp<=63)) {
 				// convert to base 3
 				result = Integer.toString(Integer.parseInt(chString, 10), 3);
 				// convert to notes
@@ -146,6 +146,25 @@ public class Key {
 					}
 				}
 			}
+			
+			/*else if((temp<=90 && temp>=65)||(temp==32)) {
+				// convert to base 3
+				result = Integer.toString(Integer.parseInt(chString, 10), 3);
+				// convert to notes
+				for(int j=0; j<result.length(); j++) {
+					switch(result.charAt(j)) {
+						case('0'):
+							tones = tones.concat("C");
+							break;
+						case('1'):
+							tones = tones.concat("D");
+							break;
+						case('2'):
+							tones = tones.concat("E");
+							break;
+					}
+				}
+			}*/
 		}
 		System.out.println(tones);
 		return tones;
@@ -234,45 +253,7 @@ public class Key {
 			resultPT = resultPT.concat(strPT);
 		}
 				
-				// OLD CODE
-				/*for(int j=0; j<result.length(); j++) {
-					switch(result.charAt(j)) {
-						case('0'):
-							tones = tones.concat("F");
-							break;
-						case('1'):
-							tones = tones.concat("G");
-							break;
-						case('2'):
-							tones = tones.concat("A");
-							break;
-						case('3'):
-							tones = tones.concat("B");
-							break;
-						default:
-							System.out.println("why are you not entering the cases");
-					}
-				}
-			}else if(temp<=90 && temp>=65) {
-				// convert to base 3
-				result = Integer.toString(Integer.parseInt(chString, 10), 4);
-				// convert to notes
-				for(int j=0; j<result.length(); j++) {
-					switch(result.charAt(j)) {
-						case('0'):
-							tones = tones.concat("C");
-							break;
-						case('1'):
-							tones = tones.concat("D");
-							break;
-						case('2'):
-							tones = tones.concat("E");
-							break;
-					}
-				}
-			}
-		}
-		System.out.println(tones);*/
+			
 		return resultPT;
 	}
 	
