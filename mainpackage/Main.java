@@ -16,7 +16,7 @@ public class Main {
 			if(mode.contains("X")) {
 				System.out.println("Exiting...");
 				exit = true;
-			}else {
+			}else if(mode.contains("E") || mode.contains("D")){
 				System.out.println("Select a key: ");
 				String keyInput = sc.nextLine();
 				// TODO: check if valid key
@@ -44,6 +44,8 @@ public class Main {
 				}else {
 					System.out.println("Invalid input.");
 				}
+			}else {
+				System.out.println("Invalid input.");
 			}
 		}
 
