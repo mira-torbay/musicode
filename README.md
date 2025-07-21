@@ -9,8 +9,6 @@ Note: I didn't put in all the incorrect input handling yet so can you just not i
 
 ## How To Use It
 
-```
-
 ### Using the MusicodeUI App
 
 1. **Compile the code:**
