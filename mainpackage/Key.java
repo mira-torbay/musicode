@@ -96,7 +96,7 @@ public class Key {
 		Tone.playTone(B, 500, 0.4);
 	}
 	
-	public String encrypt(String message) {
+	public String encode(String message) {
 		String tones = "";
 		//char[] tonesChar = tones.toCharArray();
 		int temp;
@@ -170,7 +170,7 @@ public class Key {
 		return tones;
 	}
 	
-	public String decrypt(String tones) {
+	public String decode(String tones) {
 		String message = "";
 		char temp;
 		String result = "";

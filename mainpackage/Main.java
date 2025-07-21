@@ -10,7 +10,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		boolean exit = false;
 		while(!exit) {
-			System.out.println("Encrypt (type \"E\"), decrypt (type \"D\") or exit (type \"X\")");
+			System.out.println("Encode (type \"E\"), Decode (type \"D\") or exit (type \"X\")");
 			String mode = sc.nextLine();
 			System.out.println(mode);
 			if(mode.contains("X")) {
@@ -31,15 +31,15 @@ public class Main {
 				}else if(mode.contains("E")) {
 					System.out.println("Input natural language message: ");
 					String message = sc.nextLine();
-					String tones = key.encrypt(message);
+					String tones = key.encode(message);
 					System.out.println(tones);
 					Tone.initAudioLine();
 					key.playTones(tones);
 					Tone.closeAudioLine();
 				}else if(mode.contains("D")) {
-					System.out.println("Input encrypted message: ");
+					System.out.println("Input encoded message: ");
 					String tones = sc.nextLine();
-					String message = key.decrypt(tones);
+					String message = key.decode(tones);
 					System.out.println(message);
 				}else {
 					System.out.println("Invalid input.");
